@@ -4,6 +4,7 @@ public partial class Practice1 : ContentPage
 {
 	Button up;
 	Button down;
+	Button del;
 	Entry entry;
 	Label label;
 	public Practice1()
@@ -22,7 +23,6 @@ public partial class Practice1 : ContentPage
 			Placeholder = "Enter a number",
             Keyboard = Keyboard.Numeric,
         };
-
 		label = new Label()
 		{
 			Text=""
@@ -33,6 +33,7 @@ public partial class Practice1 : ContentPage
 
 		layout.Children.Add(up);
 		layout.Children.Add(down);
+		layout.Children.Add(del);
 		layout.Children.Add(entry);
 		layout.Children.Add(label);
 	}
@@ -40,7 +41,7 @@ public partial class Practice1 : ContentPage
     {
         if (up.Text == "Read Only")
         {
-            up.Text = "Write";
+            up.Text = "Read Write";
             entry.IsEnabled = false;
         }
         else
@@ -52,5 +53,10 @@ public partial class Practice1 : ContentPage
     private void Copy(object sender, EventArgs e)
     {
         label.Text = entry.Text;
+		label = new Label()
+		{
+			Text = ""
+		};
+        layout.Children.Add(label);
     }
 }

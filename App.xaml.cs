@@ -6,7 +6,7 @@
         {
             InitializeComponent();
 
-            MainPage = new Practice1();
+            MainPage = new Practice2();
         }
     }
 }
